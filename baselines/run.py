@@ -14,9 +14,9 @@ from baselines.common.tf_util import get_session
 from baselines import logger
 from importlib import import_module
 
-try:
+try: 
     from mpi4py import MPI
-except ImportError:
+except ImportError: # If the error matches ImportError, run the code in the block
     MPI = None
 
 try:
@@ -28,6 +28,7 @@ try:
     import roboschool
 except ImportError:
     roboschool = None
+    
 
 _game_envs = defaultdict(set)
 for env in gym.envs.registry.all():
